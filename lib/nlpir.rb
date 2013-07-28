@@ -1,5 +1,5 @@
 # coding: utf-8
-require "nlpir/version"
+require File.expand_path("../nlpir/version", __FILE__)
 require 'fiddle'
 require 'fiddle/struct'
 require 'fiddle/import'
@@ -26,8 +26,9 @@ module Nlpir
 
 
   #提取链接库接口
-  libm = Fiddle.dlopen(File.dirname(__FILE__)+"/bin/libNLPIR.so")
-  NLPIR_Init_rb = Fiddle::Function.new(
+  libm = Fiddle.dlopen(File.expand_path("../../bin/libNLPIR.so", __FILE__))
+ 
+ NLPIR_Init_rb = Fiddle::Function.new(
     libm['_Z10NLPIR_InitPKci'],
     [Fiddle::TYPE_VOIDP,Fiddle::TYPE_INT],
     Fiddle::TYPE_INT
@@ -146,7 +147,7 @@ module Nlpir
 
   #--函数
 
-  def NLPIR_Init(sInitDirPath=nil , encoding=GBK_CODE)
+  def NLPIR_Init(sInitDirPath=nil , encoding=UTF8_CODE)
     NLPIR_Init_rb.call(sInitDirPath,encoding)
   end
 
