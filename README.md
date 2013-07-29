@@ -26,19 +26,19 @@ some DEFINE you may use :
 	  NLPIR_FALSE = 0
 	  NLPIR_TRUE = 1
 	  POS_MAP_NUMBER = 4
-	  ICT_POS_MAP_FIRST = 1            #计算所一级标注集
+	  ICT_POS_MAP_FIRST = 1         #计算所一级标注集
 	  ICT_POS_MAP_SECOND = 0        #计算所二级标注集
 	  PKU_POS_MAP_SECOND = 2        #北大二级标注集
-	  PKU_POS_MAP_FIRST = 3	       #北大一级标注集
+	  PKU_POS_MAP_FIRST = 3	        #北大一级标注集
 	  POS_SIZE = 40
 
 	  Result_t = struct ['int start','int length',"char  sPOS[#{POS_SIZE}]",'int iPOS',
 	  		          'int word_ID','int word_type','double weight']
 
-	  GBK_CODE = 0                                                    #默认支持GBK编码
-	  UTF8_CODE = GBK_CODE + 1                          #UTF8编码
-	  BIG5_CODE = GBK_CODE + 2                          #BIG5编码
-	  GBK_FANTI_CODE = GBK_CODE + 3             #GBK编码，里面包含繁体字
+	  GBK_CODE = 0                              #GBK编码
+	  UTF8_CODE = GBK_CODE + 1                  #UTF8编码
+	  BIG5_CODE = GBK_CODE + 2                  #BIG5编码
+	  GBK_FANTI_CODE = GBK_CODE + 3             #GBK编码，包含繁体字
 
 ```
 
