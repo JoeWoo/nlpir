@@ -31,7 +31,8 @@ some DEFINE you may use :
 	  PKU_POS_MAP_SECOND = 2        #北大二级标注集
 	  PKU_POS_MAP_FIRST = 3	        #北大一级标注集
 	  POS_SIZE = 40
-
+	
+	  #词条结构体 term struct
 	  Result_t = struct ['int start','int length',"char  sPOS[#{POS_SIZE}]",'int iPOS',
 	  		          'int word_ID','int word_type','double weight']
 
