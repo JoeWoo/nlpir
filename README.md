@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Nlpir version 0.0.1 just support the *nix OS, and We`ll release it for windows platform in few days.
+Nlpir version 0.0.3 just support the *nix OS, and We`ll release it for windows platform in few days.
 
 some DEFINE you may use :
 ```ruby
