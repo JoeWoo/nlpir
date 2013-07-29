@@ -51,7 +51,7 @@ after you gem install it:
 
 		s = "坚定不移沿着中国特色社会主义道路前进  为全面建成小康社会而奋斗"
 		#first of all : Call the NLPIR API NLPIR_Init
-		if NLPIR_Init(nil, UTF8_CODE )==NLPIR_FALSE 
+		if NLPIR_Init(nil, UTF8_CODE ,File.expand_path("../", __FILE__))==NLPIR_FALSE 
 			puts "NLPIR_Init failed" 
 		end
 
@@ -65,9 +65,9 @@ after you gem install it:
 		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
 		 puts "\n"
 
-		#example2:   Process a paragraph, and return the result text with POS
-		 puts NLPIR_ParagraphProcess(s, ICT_POS_MAP_FIRST)
-		 puts NLPIR_ParagraphProcess(s, PKU_POS_MAP_SECOND)
+		#example2:   Process a paragraph, and return the result text with POS or not
+		 puts NLPIR_ParagraphProcess(s, NLPIR_TRUE)
+		 puts NLPIR_ParagraphProcess(s, NLPIR_FALSE)
 		
 		#example3:   Process a paragraph, and return an array filled elements are POSed words.
 		#tips: NLPIR_ParagraphProcessA() return the array, and its memory is malloced by NLPIR, it will be freed by NLPIR_Exit() (memory in server)

@@ -3,6 +3,7 @@ require File.expand_path("../nlpir/version", __FILE__)
 require 'fiddle'
 require 'fiddle/struct'
 require 'fiddle/import'
+require 'fileutils' 
 include Fiddle::CParser
 include Fiddle::Importer
 
@@ -147,8 +148,21 @@ module Nlpir
 
   #--函数
 
-  def NLPIR_Init(sInitDirPath=nil , encoding=UTF8_CODE)
+  def NLPIR_Init(sInitDirPath=nil , encoding=UTF8_CODE, filepath)
+    filepath += "/Data/"
+    if File.exist?(filepath)==false
+      FileUtils.mkdir(filepath)
+      filemother = File.expand_path("../Data/", __FILE__)
+      list=Dir.entries(filemother)
+      list.each_index do |x| 
+        t = filemother+"/"+list[x]
+        FileUtils.cp(t,filepath) if !File.directory?(t) 
+      end
+    end
+    
+    
     NLPIR_Init_rb.call(sInitDirPath,encoding)
+
   end
 
   def NLPIR_Exit()
@@ -159,8 +173,8 @@ module Nlpir
     NLPIR_ImportUserDict_rb.call(sFilename)
   end
 
-  def NLPIR_ParagraphProcess(sParagraph, bPOStagged=1)
-    NLPIR_ParagraphProcess_rb.call(sParagraph, bPOStagged)
+  def NLPIR_ParagraphProcess(sParagraph, bPOStagged=NLPIR_TRUE)
+    NLPIR_ParagraphProcess_rb.call(sParagraph, bPOStagged).to_s
   end
 
   def NLPIR_ParagraphProcessA(sParagraph)
@@ -176,7 +190,7 @@ module Nlpir
     return words_list
   end
 
-    def NLPIR_FileProcess(sSourceFilename, sResultFilename, bPOStagged=ICT_POS_MAP_FIRST)
+    def NLPIR_FileProcess(sSourceFilename, sResultFilename, bPOStagged=NLPIR_TRUE)
       NLPIR_FileProcess_rb.call(sSourceFilename, sResultFilename, bPOStagged)
     end
 
@@ -210,19 +224,19 @@ module Nlpir
     end
 
     def NLPIR_GetKeyWords(sLine, nMaxKeyLimit=50, bWeightOut=NLPIR_FALSE)
-      NLPIR_GetKeyWords_rb.call(sLine, nMaxKeyLimit, bWeightOut)
+      NLPIR_GetKeyWords_rb.call(sLine, nMaxKeyLimit, bWeightOut).to_s
     end
 
     def NLPIR_GetFileKeyWords(sTextFile, nMaxKeyLimit=50, bWeightOut=NLPIR_FALSE)
-      NLPIR_GetFileKeyWords_rb.call(sTextFile, nMaxKeyLimit, bWeightOut)
+      NLPIR_GetFileKeyWords_rb.call(sTextFile, nMaxKeyLimit, bWeightOut).to_s
     end
 
     def NLPIR_GetNewWords(sLine, nMaxKeyLimit=50, bWeightOut=NLPIR_FALSE)
-      NLPIR_GetNewWords_rb.call(sLine, nMaxKeyLimit, bWeightOut)
+      NLPIR_GetNewWords_rb.call(sLine, nMaxKeyLimit, bWeightOut).to_s
     end
 
     def NLPIR_GetFileNewWords(sTextFile, nMaxKeyLimit=50, bWeightOut=NLPIR_FALSE)
-      NLPIR_GetFileNewWords_rb.call(sTextFile, nMaxKeyLimit, bWeightOut)
+      NLPIR_GetFileNewWords_rb.call(sTextFile, nMaxKeyLimit, bWeightOut).to_s
     end
 
     def NLPIR_FingerPrint(sLine)
