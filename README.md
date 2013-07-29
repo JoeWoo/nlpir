@@ -27,9 +27,9 @@ some DEFINE you may use :
 	  NLPIR_TRUE = 1
 	  POS_MAP_NUMBER = 4
 	  ICT_POS_MAP_FIRST = 1            #计算所一级标注集
-	  ICT_POS_MAP_SECOND = 0       #计算所二级标注集
-	  PKU_POS_MAP_SECOND = 2       #北大二级标注集
-	  PKU_POS_MAP_FIRST = 3	#北大一级标注集
+	  ICT_POS_MAP_SECOND = 0        #计算所二级标注集
+	  PKU_POS_MAP_SECOND = 2        #北大二级标注集
+	  PKU_POS_MAP_FIRST = 3	       #北大一级标注集
 	  POS_SIZE = 40
 
 	  Result_t = struct ['int start','int length',"char  sPOS[#{POS_SIZE}]",'int iPOS',
@@ -55,21 +55,12 @@ after you gem install it:
 			puts "NLPIR_Init failed" 
 		end
 
-		#example1:   Import user-defined dictionary from a text file. and puts NLPIR result
-		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
-		 puts NLPIR_ImportUserDict("./userdict.txt")
-		  NLPIR_AddUserWord("1989年春夏之交的政治风波 n")
-		 	#you can see the example file: ./userdict.txt to know the userdict`s format requirements
-		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
-		 NLPIR_DelUsrWord("1989年春夏之交的政治风波")
-		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
-		 puts "\n"
 
-		#example2:   Process a paragraph, and return the result text with POS or not
+		#example1:   Process a paragraph, and return the result text with POS or not
 		 puts NLPIR_ParagraphProcess(s, NLPIR_TRUE)
 		 puts NLPIR_ParagraphProcess(s, NLPIR_FALSE)
 		
-		#example3:   Process a paragraph, and return an array filled elements are POSed words.
+		#example2:   Process a paragraph, and return an array filled elements are POSed words.
 		#tips: NLPIR_ParagraphProcessA() return the array, and its memory is malloced by NLPIR, it will be freed by NLPIR_Exit() (memory in server)
 		
 		words_list = NLPIR_ParagraphProcessA(s)
@@ -88,7 +79,7 @@ after you gem install it:
 		  i += 1 
 		end
 		
-		#example4:   Process a paragraph, and return an array filled elements are POSed words.
+		#example3:   Process a paragraph, and return an array filled elements are POSed words.
 		#tips: NLPIR_ParagraphProcessAW() return the array, and its memory is malloced by ruby::fiddle,and be collect by GC (memory in agent)
 		
 		words_list = NLPIR_ParagraphProcessAW(s)
@@ -107,15 +98,15 @@ after you gem install it:
 		  i += 1 
 		end
 
-		#example5:   Process a text file, and wirte the result text to file
+		#example4:   Process a text file, and wirte the result text to file
 		 puts NLPIR_FileProcess("./test.txt", "./test_result.txt", NULL)
 
 
-		#example6:   Get ProcessAWordCount, it returns the count of the words
+		#example5:   Get ProcessAWordCount, it returns the count of the words
 		 puts count = NLPIR_GetParagraphProcessAWordCount(s)
 
 
-		#example7:   Add/Delete a word to the user dictionary (the path of user dictionary is ./data/userdict.dpat)
+		#example6:   Add/Delete a word to the user dictionary (the path of user dictionary is ./data/userdict.dpat)
 		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 			#add a user word
 		 NLPIR_AddUserWord("都是爱思客 n")
@@ -133,6 +124,16 @@ after you gem install it:
 		 NLPIR_SaveTheUsrDic()
 		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 
+		
+		#example7:   Import user-defined dictionary from a text file. and puts NLPIR result
+		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
+		 puts NLPIR_ImportUserDict("./userdict.txt")
+		  NLPIR_AddUserWord("1989年春夏之交的政治风波 n")
+		 	#you can see the example file: ./userdict.txt to know the userdict`s format requirements
+		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
+		 NLPIR_DelUsrWord("1989年春夏之交的政治风波")
+		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
+		 puts "\n"
 
 		#example8:   Get keywords of text
 			#2nd parameter is the MaxNumber of keywords
