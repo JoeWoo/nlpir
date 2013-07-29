@@ -51,10 +51,8 @@ after you gem install it:
 
 		s = "坚定不移沿着中国特色社会主义道路前进  为全面建成小康社会而奋斗"
 		#first of all : Call the NLPIR API NLPIR_Init
-		if NLPIR_Init(nil, UTF8_CODE ,File.expand_path("../", __FILE__))==NLPIR_FALSE 
-			puts "NLPIR_Init failed" 
-		end
-
+		
+		NLPIR_Init(nil, UTF8_CODE , File.expand_path("../", __FILE__))
 
 		#example1:   Process a paragraph, and return the result text with POS or not
 		 puts NLPIR_ParagraphProcess(s, NLPIR_TRUE)
