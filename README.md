@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Nlpir version 0.0.3 just support the *nix OS, and We`ll release it for windows platform in few days.
+Nlpir version 0.0.3, gem nlpir-0.0.3-x86-Linux support the *nix OS, and nlpir for windows platform is [nlpir_win](https://github.com/JoeWoo/nlpir_win).
 
 some DEFINE you may use :
 ```ruby
@@ -44,6 +44,8 @@ some DEFINE you may use :
 ```
 
 after you gem install it:
+
+also can see some examples from test cases [here](https://github.com/JoeWoo/nlpir_win/blob/master/test/test_nlpir.rb)
 
 ```ruby
 		
@@ -109,30 +111,25 @@ after you gem install it:
 		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 			#add a user word
 		 NLPIR_AddUserWord("都是爱思客 n")
-		 NLPIR_AddUserWord("思客 n")
-		 NLPIR_AddUserWord("你是 n")
-		 NLPIR_AddUserWord("都是客 n")
-		 NLPIR_AddUserWord("都是爱 n")
 		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 			#save the user word to disk
 		 NLPIR_SaveTheUsrDic()
 		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 			#delete a user word
-		# puts i=NLPIR_DelUsrWord("都是爱思客")
-		 #NLPIR_DelUsrWord("爱思客")
+		 NLPIR_DelUsrWord("都是爱思课")
+		 	#save the change to disk
 		 NLPIR_SaveTheUsrDic()
-		 puts NLPIR_ParagraphProcess("我们都是爱思客")
 
 		
 		#example7:   Import user-defined dictionary from a text file. and puts NLPIR result
 		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
 		 puts NLPIR_ImportUserDict("./userdict.txt")
 		  NLPIR_AddUserWord("1989年春夏之交的政治风波 n")
-		 	#you can see the example file: ./userdict.txt to know the userdict`s format requirements
+		 	#you can see the example file: ./test/userdict.txt to know the userdict`s format requirements
 		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
 		 NLPIR_DelUsrWord("1989年春夏之交的政治风波")
 		 puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
-		 puts "\n"
+	
 
 		#example8:   Get keywords of text
 			#2nd parameter is the MaxNumber of keywords
@@ -187,6 +184,7 @@ after you gem install it:
 		NLPIR_Exit()
 
 ```
+
 
 ## Contributing
 
