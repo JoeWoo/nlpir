@@ -45,7 +45,7 @@ some DEFINE you may use :
 
 after you gem install it:
 
-also can see some examples from test cases [here](https://github.com/JoeWoo/nlpir_win/blob/master/test/test_nlpir.rb)
+also can see some examples from test cases [here](https://github.com/JoeWoo/nlpir/blob/master/test/test_nlpir.rb)
 
 ```ruby
 		
