@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Nlpir version 0.0.3, gem nlpir-0.0.3-x86-Linux support the *nix OS, and nlpir for windows platform is [nlpir_win](https://github.com/JoeWoo/nlpir_win).
+Nlpir version 0.0.3, gem nlpir-0.0.3-x86-Linux support '>=ruby2.0.0' on *nix OS, and nlpir for windows platform is [nlpir_win](https://github.com/JoeWoo/nlpir_win).
 
 some DEFINE you may use :
 ```ruby
