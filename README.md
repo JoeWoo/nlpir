@@ -4,6 +4,11 @@ A rubygem wrapper of chinese segment tools ICTCLAS2013 for *nix OS
 
 Nlpir version 0.0.3, gem nlpir-0.0.3-x86-Linux support '>=ruby2.0.0' on *nix OS, and nlpir for windows platform is [nlpir_win](https://github.com/JoeWoo/nlpir_win).
 
+## Tips
+
+T_T I'm sorry about the function userdict can`t work on linux.  windows gem works perfectly.
+
+the bug exist in the origin .so file that ICTCLAS2013 official team brought.
 
 ## Installation
 
