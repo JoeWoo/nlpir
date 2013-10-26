@@ -8,7 +8,9 @@ Nlpir version 0.0.3, gem nlpir-0.0.3-x86-Linux support '>=ruby2.0.0' on *nix OS,
 
 T_T I'm sorry about the function userdict can`t work on linux.  windows gem works perfectly.
 
-the bug exist in the origin .so file that ICTCLAS2013 official team brought.
+the bug is brought by ICTCLAS2013 official team in the origin .so file.
+
+I have already reported the bug to them. 
 
 ## Installation
 
