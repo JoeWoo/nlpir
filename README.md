@@ -179,12 +179,9 @@ also can see some examples from test cases [here](https://github.com/JoeWoo/nlpi
 		#  新词识别完成后，再自动导入到分词系统中，即可完成
 
 		NLPIR_NWI_Start() #启动新词发现功能
-		f=File.new("test.txt", "r")
-		text=f.read
-		NLPIR_NWI_AddFile(text)#添加新词训练的文件，可反复添加
+		NLPIR_NWI_AddFile("./text.txt")#添加新词训练的文件，可反复添加
 		NLPIR_NWI_Complete()#添加文件或者训练内容结束
-		f.close() 
-		puts NLPIR_NWI_GetResult()#输出新词识别结果
+		puts NLPIR_NWI_GetResult().to_s#输出新词识别结果 可传入一个参数NLPIR_TRUE或NLPIR_FALSE，用于是否输出词性
 		#puts NLPIR_FileProcess("a.txt","b.txt")
 		NLPIR_NWI_Result2UserDict()#新词识别结果导入到用户词典
 
