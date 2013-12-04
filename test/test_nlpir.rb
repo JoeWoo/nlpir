@@ -67,9 +67,10 @@ class NlpirTest < Test::Unit::TestCase
   def test_userDict
   	NLPIR_Init(nil, UTF8_CODE ,File.expand_path("../", __FILE__))
   	
-  	NLPIR_AddUserWord("1989年春夏之交的政治风波 n")
+  	#puts NLPIR_AddUserWord("1989年春夏之交的政治风波  n")
   	NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
-  	NLPIR_DelUsrWord("1989年春夏之交的政治风波")
+  	
+    #puts NLPIR_DelUsrWord("1989年春夏之交的政治风波")
   	
   	NLPIR_Exit()
   end
@@ -78,6 +79,8 @@ class NlpirTest < Test::Unit::TestCase
   	
   	assert_equal 5,
   		NLPIR_ImportUserDict("./userdict.txt")
+      NLPIR_SaveTheUsrDic()
+    puts NLPIR_ParagraphProcess("1989年春夏之交的政治风波1989年政治风波24小时降雪量24小时降雨量863计划ABC防护训练APEC会议BB机BP机C2系统C3I系统C3系统C4ISR系统C4I系统CCITT建议")
   	
   	NLPIR_Exit()
   end
