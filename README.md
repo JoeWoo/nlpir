@@ -1,7 +1,7 @@
 # Nlpir
 
 A rubygem wrapper of chinese segment tools ICTCLAS2014.
-all bugs fixed, supporting userdict.
+All bugs fixed, support userdict perfectly.
 
 ## Installation
 
