@@ -105,7 +105,7 @@ after you gem install it:
 		 puts count = file_wordcount(s)
 
 
-<<<<<<< HEAD
+
 		#example6:   Add/Delete a word to the user dictionary (the path of user dictionary of the path is ./data/userdict.dpat)
 		 puts text_proc("我们都是爱思客")
 			#add a user word
@@ -187,10 +187,7 @@ after you gem install it:
 
 ```
 ##c-style func
-=======
-also can see some examples from test cases [here](https://github.com/JoeWoo/nlpir/blob/master/test/test_nlpir.rb)
 
->>>>>>> origin/master
 ```ruby
 		
 		require 'nlpir'
