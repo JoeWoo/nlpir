@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Nlpir::VERSION
   spec.authors       = ["JoeWoo"]
   spec.email         = ["0wujian0@gmail.com"]
-  spec.description   = %q{"A rubygem wrapper of chinese segment tools ICTCLAS2013"}
+  spec.description   = %q{"A rubygem wrapper of chinese segment tools ICTCLAS2014"}
   spec.summary       = %q{"ICTCLAS是由中国科学院计算技术研究所研发。中文分词；词性标注；命名实体识别；新词识别；同时支持用户词典。"}
   spec.homepage      = "https://github.com/JoeWoo/nlpir"
   spec.license       = "MIT"
