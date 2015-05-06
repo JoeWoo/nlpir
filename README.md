@@ -1,6 +1,7 @@
 # Nlpir
 
 A rubygem wrapper of chinese segment tools ICTCLAS2014 NLPIR(https://github.com/NLPIR-team/NLPIR)[https://github.com/NLPIR-team/NLPIR].
+
 (http://www.nlpir.org/)[http://www.nlpir.org/]
 
 version 1.0.0 All bugs fixed, support userdict perfectly. for X64 [here](https://github.com/JoeWoo/nlpir_x64)
